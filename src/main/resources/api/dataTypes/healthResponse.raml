@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  version: string
+  uptime: integer
+  load:
+    type: array
+    items: 
+      type: number
+  sql:
+    type: object
+    properties:
+      ssl: boolean
+      min: integer
+      max: integer
+  cache:
+    type: object
+    properties:
+      connected: boolean
+      ready: boolean
+
+examples:
+  !include ../examples/healthResponse.raml

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="95acd466-88b7-4c86-8a05-cacb29a72295" >
+		<http:request-connection protocol="HTTPS" host="api.scratch.mit.edu" port="443" />
+	</http:request-config>
+	<flow name="implementationFlow" doc:id="7008c087-b0bd-4de7-98d6-9d7d78c7eb5f" >
+		<http:request method="GET" doc:name="Request" doc:id="600a3c5a-d2e5-4bcb-b647-ce63b6880a03" config-ref="HTTP_Request_configuration" path="/health1">
+			<http:response-validator >
+				<http:success-status-code-validator values="200,201,404" />
+			</http:response-validator>
+		</http:request>
+	</flow>
+</mule>

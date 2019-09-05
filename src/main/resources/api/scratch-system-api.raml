@@ -1,0 +1,29 @@
+#%RAML 1.0
+version: v1
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/77cfb470-1307-44d5-854f-b26f2c78fc6f/ # 
+title: scratch-system-api
+
+types:
+  healthResponse: !include dataTypes/healthResponse.raml
+  newsResponse: !include dataTypes/newsResponse.raml
+
+/health:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: healthResponse
+/news:
+  get:
+    headers:
+      client_id: 
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: newsResponse
+    
+

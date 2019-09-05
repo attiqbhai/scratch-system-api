@@ -1,0 +1,14 @@
+#%RAML 1.0 DataType
+type: array
+items:
+  type: object
+  properties:
+    id: integer
+    stamp: string
+    headline: string
+    url: string
+    image: string
+    copy: string
+
+examples:
+  !include ../examples/newsResponse.raml
