@@ -1,7 +1,7 @@
 // Allocate Build Node
 node('master') {
     stage("Fetch Source Code") {
-        git 'https://github.com/TrainingByPackt/Beginning-Continuous-Delivery-With-Jenkins'
+        git 'https://github.com/attiqbhai/scratch-system-api'
     }
     stage("Testing") {
         sh 'echo testing is running'
