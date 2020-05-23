@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                echo "Build Id: ${env.BUILD_ID}, Jenkins Url: ${env.JENKINS_URL}"
                 sh "mvn clean"
             }
         }
