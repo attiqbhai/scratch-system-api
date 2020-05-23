@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        mainvar: "main-test-1"
+        mainvar = "main-test-1"
     }
     stages {
         stage('build') {
             environment {
-                stagevar: "stage-test-1"
+                stagevar = "stage-test-1"
             }
             steps {
                 echo mainvar
